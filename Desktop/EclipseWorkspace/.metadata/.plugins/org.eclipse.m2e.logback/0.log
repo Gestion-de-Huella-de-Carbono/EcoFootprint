@@ -2062,3 +2062,7 @@ org.eclipse.core.runtime.CoreException: Could not read maven project
 2024-03-28 12:14:49,270 [Worker-19: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\jeoba\Desktop\EclipseWorkspace\Proyecto2\Proyecto-unidad-2\src\test\resources
 2024-03-28 12:15:29,621 [Worker-19: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
 2024-03-28 12:15:29,625 [Worker-19: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\jeoba\Desktop\EclipseWorkspace\Proyecto2\Proyecto-unidad-2\src\test\resources
+2024-03-28 12:16:19,674 [Worker-0: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-03-28 12:16:19,679 [Worker-0: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\jeoba\Desktop\EclipseWorkspace\Proyecto2\Proyecto-unidad-2\src\test\resources
+2024-03-28 12:21:34,448 [Worker-19: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-03-28 12:21:34,454 [Worker-19: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\jeoba\Desktop\EclipseWorkspace\Proyecto2\Proyecto-unidad-2\src\test\resources

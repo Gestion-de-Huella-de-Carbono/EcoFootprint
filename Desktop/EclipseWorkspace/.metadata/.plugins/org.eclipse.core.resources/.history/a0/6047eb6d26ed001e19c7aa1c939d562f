@@ -1,0 +1,9 @@
+package data;
+//Prueba
+
+public class Person {
+	int a = 10;
+	if (numero > 5) {
+		a = 1;
+	}
+}

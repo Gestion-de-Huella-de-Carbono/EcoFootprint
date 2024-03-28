@@ -1,0 +1,9 @@
+package data;
+public class Person {
+	int numero = 10;
+
+    // Comprobar si el número es mayor que 5
+    if (numero > 5) {
+        System.out.println("El número es mayor que 5.");
+    }
+}

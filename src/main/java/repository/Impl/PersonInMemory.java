@@ -8,10 +8,10 @@ import java.util.List;
 
 public class PersonInMemory implements PersonRepository {
 
-    private List<Person> persons;
+    private List<Person> person;
 
     public PersonInMemory() {
-        this.customers = new ArrayList<>();
+        this.person = new ArrayList<>();
 
     @Override
     public List<Person> findAll() {

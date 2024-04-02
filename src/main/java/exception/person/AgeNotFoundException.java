@@ -1,4 +1,4 @@
 package exception.person;
 
-public class AgeNotFoundException {
+public class AgeNotFoundException extends PersonException{
 }

@@ -14,52 +14,11 @@ private Double other;
 
     }
 
-    public Double getTransport() {
-        return transport;
+    public double getTotalCarbonFootprint() {
+        return transport + energy + food + other;
     }
-
-    public Double getEnergy() {
-        return energy;
-    }
-
-    public Double getFood() {
-        return food;
-    }
-
-    public Double Other() {
-        return other;
-    }
-
-    public void setTransport(Double transport) {
-        this.transport = transport;
-    }
-
-    public void setEnergy(Double energy) {
-         this.energy = energy;
-    }
-
-    public void setFood(Double food) {
-        this.food = food;
-    }
-
-    public void setOther(Double other) {
-        this.other = other;
-    }
-
 
 }
- /*
-    =======
 
 
 
-
-    // agregar el metodo para que se sume toda la contaminacion y retorne el total
-
-
-    public double getTotalCarbonFootprint() {
-        return transportation + energy + food + others;
-    }
-
-
->>>>>>> origin/main*/

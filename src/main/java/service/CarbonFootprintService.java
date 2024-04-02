@@ -24,15 +24,4 @@ public class CarbonFootprintService {
         }
         return carbonFootprint;
     }
-
-    public CarbonFootprint save(CarbonFootprint carbonFootprint) throws SavingCarbonFootprintException {
-        Optional<CarbonFootprint> optionalCarbonFootprint = carbonFootprintRepository.save(carbonFootprint);
-
-        return  optionalCarbonFootprint.orElseThrow(() -> new SavingCarbonFootprintException( carbonFootprint ));
-
-    }
-
-
-
-
 }

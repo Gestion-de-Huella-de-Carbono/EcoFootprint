@@ -15,14 +15,6 @@ public class Person {
 		this.totalCarbonFootprint = totalCarbonFootprint;
 	}
 
-	// modificar el codigo para que funcione bien el siguiente metodo
-
-	/*
-	public void addToCarbonFootprint(CarbonFootprint footprint) {
-        this.totalCarbonFootprint += footprint.getTotalCarbonFootprint();
-	 */
-	
-	//Getters
 	
 	public String getName() {
 		return name;
@@ -34,28 +26,14 @@ public class Person {
 	public int getAge() {
 		return age;
 	}
-	public String getCity() {
-		return city;
-	}
-	public double getTotalCarbonFootprint() {
-		return totalCarbonFootprint;
-	}
+
 	
-	//Setters
-	
-	public void setName(String name) {
-		this.name = name;
-	}
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
-	}
-	public void setAge(int age) {
-	    this.age = age;
-	}
-	public void setCity(String city) {
-        this.city = city;
-    }
+
 	public void setTotalCarbonFootprint(double totalCarbonFootprint) {
         this.totalCarbonFootprint = totalCarbonFootprint;
     }
+
+	public String toString() {
+			return "[" + name + "," + lastName + "," + age + "," + city + "," + totalCarbonFootprint + "]";
+	}
 }

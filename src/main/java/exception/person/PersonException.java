@@ -1,7 +1,4 @@
 package exception.person;
 
-public class PersonException {
-
-
-
+public class PersonException extends Exception {
 }

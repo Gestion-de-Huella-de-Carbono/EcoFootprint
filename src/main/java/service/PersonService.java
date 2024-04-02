@@ -6,6 +6,7 @@ import java.util.Optional;
 
 import data.Person;
 import exception.person.SavingPersonException;
+import exception.person.PersonNotFoundException;
 import repository.PersonRepository;
 
 public class PersonService {
@@ -17,18 +18,18 @@ public class PersonService {
     }
     
     
-    public List<Person> findAll() /*throws PersonNotFoundException*/ {
+    public List<Person> findAll() throws PersonNotFoundException {
 
         var persons = personRepository.findAll();
-        /*                                               //error por la exception
+                                                       //error por PersonException
         if (persons.isEmpty()) {
-            throw new PersonNotFoundException();
+            throw new PersonNotFoundException("Personas no encontradas");
         }
-        */
+        
         return persons;
     }
 
-    public Person save(Person person) throws SavingPersonException {
+    public Person save(Person person) throws SavingPersonException {    //falta person exception
 
         Optional<Person> optPerson = personRepository.save(person);
 

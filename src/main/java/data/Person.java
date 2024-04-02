@@ -14,6 +14,13 @@ public class Person {
 		this.city = city;
 		this.totalCarbonFootprint = totalCarbonFootprint;
 	}
+
+	// modificar el codigo para que funcione bien el siguiente metodo
+
+	/*
+	public void addToCarbonFootprint(CarbonFootprint footprint) {
+        this.totalCarbonFootprint += footprint.getTotalCarbonFootprint();
+	 */
 	
 	//Getters
 	

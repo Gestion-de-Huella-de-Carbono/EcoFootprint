@@ -1,9 +1,11 @@
 package service;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import data.Person;
-import exception.PersonNotFoundException;
+import exception.person.SavingPersonException;
 import repository.PersonRepository;
 
 public class PersonService {
@@ -26,16 +28,27 @@ public class PersonService {
         return persons;
     }
 
-    /* 
-                                                  ????
     public Person save(Person person) throws SavingPersonException {
 
-	    Optional<Person> optPerson = personRepository.save( person );
+        Optional<Person> optPerson = personRepository.save(person);
 
-	    return optPerson.orElseThrow(() -> new SavingPersonException( person ));
-                                                        ????
-     */
+        return optPerson.orElseThrow();
+    }
 
+    public List<Person> showSameAgePeople(int edad) {
+        // Obtener todas las personas
+        List<Person> personas = personRepository.findAll();
+
+        // Filtrar las personas por edad
+        List<Person> personasConMismaEdad = new ArrayList<>();
+        for (Person persona : personas) {
+            if (persona.getAge() == edad) {
+                personasConMismaEdad.add(persona);
+            }
+        }
+
+        return personasConMismaEdad;
+    }
 }
 
 /*

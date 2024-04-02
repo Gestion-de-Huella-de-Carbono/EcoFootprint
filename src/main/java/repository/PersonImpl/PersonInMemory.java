@@ -1,4 +1,4 @@
-package repository.Impl;
+package repository.PersonImpl;
 
 import data.Person;
 import repository.PersonRepository;
@@ -12,9 +12,16 @@ public class PersonInMemory implements PersonRepository {
 
     public PersonInMemory() {
         this.person = new ArrayList<>();
+    }
 
     @Override
     public List<Person> findAll() {
         return null;
     }
+
+    @Override
+    public List<Person> showSameAgePeople(int age) {
+        return null;
+    }
+
 }

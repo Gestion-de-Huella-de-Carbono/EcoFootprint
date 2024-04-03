@@ -6,7 +6,7 @@ public class Person {
 	private String city;
 	private double totalCarbonFootprint;
 	
-	//Inicio del constructor
+
 	public Person(String name,String lastName, int age, String city, double totalCarbonFootprint) {
 		this.name = name;
 		this.lastName = lastName;
@@ -15,25 +15,18 @@ public class Person {
 		this.totalCarbonFootprint = totalCarbonFootprint;
 	}
 
-	
-	public String getName() {
-		return name;
-	}
-	
-	public String getLastName() {
-		return lastName;
-	}
 	public int getAge() {
 		return age;
-	}
+	}// Método getter para obtener la edad de la persona
 
-	
-
+	// Método setter para establecer la huella de carbono total de la persona
 	public void setTotalCarbonFootprint(double totalCarbonFootprint) {
         this.totalCarbonFootprint = totalCarbonFootprint;
     }
 
-	public String toString() {
+	public String toString() {// Método toString para obtener una representación en forma de cadena de la instancia de la clase Person
 			return "[" + name + "," + lastName + "," + age + "," + city + "," + totalCarbonFootprint + "]";
+			// Devuelve una cadena que contiene el nombre, apellido, edad, ciudad y huella de carbono total de la persona,todo entre corchetes y separado por comas
 	}
+
 }

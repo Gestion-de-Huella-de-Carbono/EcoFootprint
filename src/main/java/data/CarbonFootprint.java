@@ -12,12 +12,11 @@ private Double other;
         this.food = food;
         this.other = other;
 
-    }
-
+    }// Método para calcular la huella de carbono total
     public double getTotalCarbonFootprint() {
+        // Suma los valores de transporte, energía, alimentos y otros para obtener la huella de carbono total
         return transport + energy + food + other;
     }
-
 }
 
 

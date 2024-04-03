@@ -2,11 +2,9 @@ package service;
 
 import data.CarbonFootprint;
 import exception.carbonFootprint.CarbonFootprintException;
-import exception.carbonFootprint.SavingCarbonFootprintException;
 import repository.CarbonFootprintRepository;
-
 import java.util.List;
-import java.util.Optional;
+
 
 public class CarbonFootprintService {
 

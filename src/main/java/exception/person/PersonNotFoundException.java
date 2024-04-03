@@ -1,7 +1,7 @@
 package exception.person;
 
 public class PersonNotFoundException extends PersonException {
-	public PersonNotFoundException() {
+	public PersonNotFoundException(String personasNoEncontradas) {
 		super();
 	}
 }

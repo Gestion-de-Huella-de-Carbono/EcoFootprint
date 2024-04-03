@@ -1,5 +1,7 @@
 package service;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -23,7 +25,7 @@ public class PersonService {
         var persons = personRepository.findAll();
 
         if (persons.isEmpty()) {
-            throw new PersonNotFoundException();
+            throw new PersonNotFoundException("Personas no encontradas");
         }
         return persons;
     }

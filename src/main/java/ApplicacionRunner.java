@@ -40,8 +40,8 @@ public class ApplicacionRunner {
 
         System.out.println("Personas de 20 años:");
         for (Person persona : listPeopleSameAge) {
-            System.out.println(listPeopleSameAge);
         }
+        System.out.println(listPeopleSameAge);
 
 
         // creamos y agregamos al arraylisst una nueva persona

@@ -10,6 +10,6 @@ import data.Person;
 public interface PersonRepository {
     List <Person> findAll(); // listar todas las personas
     List<Person> showSameAgePeople(List<Person> personList, int age); // listar las personas de una misma edad
-    void save(String fileAddress, ArrayList<?> arrayList) throws IOException; // agregar una persona nueva
+    void save(String fileAddress, List<Person> persons) throws IOException; // agregar una persona nueva
 
 }

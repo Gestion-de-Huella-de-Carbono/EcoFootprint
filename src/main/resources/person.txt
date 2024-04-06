@@ -1,9 +1,9 @@
 Juan Andrés, Ramirez, 28, Rionegro,0.0
-Pedro, Muñoz, 34, Bogotá, 0.0
+Pedro, Muñoz, 24, Bogotá, 0.0
 Leidy, Arias, 10, Medellin,0.0
 María, González, 22, Barranquilla, 0.0
 Andrés, López, 40, Cartagena, 0.0
-Laura, Gómez, 18, Pereira, 0.0
+Laura, Gómez, 20, Pereira, 0.0
 Alejandro, Martínez, 35, Cali, 0.0
 Valentina, Torres, 29, Cúcuta, 0.0
 Carlos, Herrera, 31, Bucaramanga, 0.0

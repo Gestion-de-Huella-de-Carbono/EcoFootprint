@@ -17,9 +17,9 @@ public class Person {
 
 	public int getAge() {
 		return age;
-	}// Método getter para obtener la edad de la persona
+	}
 
-	// Método setter para establecer la huella de carbono total de la persona
+
 	public void setTotalCarbonFootprint(double totalCarbonFootprint) {
         this.totalCarbonFootprint = totalCarbonFootprint;
     }

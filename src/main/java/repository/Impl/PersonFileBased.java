@@ -59,13 +59,13 @@ public class PersonFileBased implements PersonRepository {
     }
 
     @Override
-    public void save(String fileAddress, ArrayList<?> arrayList) throws IOException { // Método para guardar elementos de un ArrayList en un archivo plano
+    public void save(String fileAddress, List<Person> persons) throws IOException { // Método para guardar elementos de un ArrayList en un archivo plano
         //creamos un escritor de archivos
         BufferedWriter bw = new BufferedWriter(new FileWriter(fileAddress));
 
         // cliclo para ecribir cada elemento del ArratList en una nueva linea en el archibo
-        for (Object element : arrayList) {
-            bw.write(element.toString());
+        for (Person person : persons) {
+            bw.write(person.toString());
             bw.newLine();
         }
         // Cerramos el BufferedWriter

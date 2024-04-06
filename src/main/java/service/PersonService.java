@@ -30,9 +30,9 @@ public class PersonService {
         return persons;
     }
 
-    public void save (String fileAddress, ArrayList<?> arrayList) {
+    public void save (String fileAddress, List<Person> persons) {
         try {
-            personRepository.save(fileAddress, arrayList);
+            personRepository.save(fileAddress,persons);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

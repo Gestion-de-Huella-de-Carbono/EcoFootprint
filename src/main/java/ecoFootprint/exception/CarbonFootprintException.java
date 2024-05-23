@@ -1,4 +1,4 @@
-package exception.carbonFootprint;
+package ecoFootprint.exception;
 
 public class CarbonFootprintException extends Exception {
 }

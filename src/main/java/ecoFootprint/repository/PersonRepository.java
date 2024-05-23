@@ -1,11 +1,9 @@
-package repository;
+package ecoFootprint.repository;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
-import data.Person;
+import ecoFootprint.model.Person;
 
 public interface PersonRepository {
     List <Person> findAll(); // listar todas las personas

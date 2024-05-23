@@ -1,9 +1,8 @@
-package repository;
+package ecoFootprint.repository;
 
-import data.CarbonFootprint;
+import ecoFootprint.model.CarbonFootprint;
 
 import java.util.List;
-import java.util.Optional;
 
 public interface CarbonFootprintRepository {
 

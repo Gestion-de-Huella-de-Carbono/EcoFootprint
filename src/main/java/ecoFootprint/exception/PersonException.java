@@ -1,4 +1,4 @@
-package exception.person;
+package ecoFootprint.exception;
 
 public class PersonException extends Exception {
 }

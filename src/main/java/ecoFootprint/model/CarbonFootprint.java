@@ -1,4 +1,4 @@
-package data;
+package ecoFootprint.model;
 
 public class CarbonFootprint {
 private Double transport;

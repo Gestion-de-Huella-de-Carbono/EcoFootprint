@@ -10,11 +10,12 @@ public class EcoFootprintServiceImpl implements EcoFootprintService{
 	
 	private final PersonRepository personRepository;
     private final CarbonFootprintRepository carbonFootprintRepository;
-    
+
     public EcoFootprintServiceImpl(PersonRepository personRepository, CarbonFootprintRepository carbonFootprintRepository) {
         this.personRepository = personRepository;
         this.carbonFootprintRepository = carbonFootprintRepository;
     }
+  
     @Override
 	public List<Person> findAllPersons() {
 		return personRepository.findAll();		

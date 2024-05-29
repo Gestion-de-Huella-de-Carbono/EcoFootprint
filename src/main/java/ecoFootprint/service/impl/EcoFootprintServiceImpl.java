@@ -15,8 +15,7 @@ public class EcoFootprintServiceImpl implements EcoFootprintService{
         this.personRepository = personRepository;
         this.carbonFootprintRepository = carbonFootprintRepository;
     }
-
-
+  
     @Override
 	public List<Person> findAllPersons() {
 		return personRepository.findAll();		

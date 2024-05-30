@@ -1,13 +1,13 @@
 package ecoFootprint.repository;
 
-import java.io.IOException;
 import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
 import ecoFootprint.model.Person;
 
-public interface PersonRepository {
-    List <Person> findAll(); // listar todas las personas
-    List<Person> showSameAgePeople(List<Person> personList, int age); // listar las personas de una misma edad
-    void save(String fileAddress, List<Person> persons) throws IOException; // agregar una persona nueva
-
+@Repository
+public interface PersonRepository extends JpaRepository<Person, Long> {
+    List <Person> findbyAge(int age); //el metodo "showSameAgePeople" al ser uno personalizado debe ser definido explicitamente en la interfaz
 }

@@ -2,9 +2,9 @@ package ecoFootprint.repository;
 
 import ecoFootprint.model.CarbonFootprint;
 
-import java.util.List;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
-public interface CarbonFootprintRepository {
-
-    List<CarbonFootprint> findAll();
+@Repository
+public interface CarbonFootprintRepository extends JpaRepository<CarbonFootprint, Long> {
 }

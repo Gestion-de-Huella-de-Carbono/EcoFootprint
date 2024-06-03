@@ -9,5 +9,8 @@ import ecoFootprint.model.Person;
 
 @Repository
 public interface PersonRepository extends JpaRepository<Person, Long> {
-    List <Person> findbyAge(int age); //el metodo "showSameAgePeople" al ser uno personalizado debe ser definido explicitamente en la interfaz
+    List<Person> findByAge(int age);
+    List<Person> findByCity(String city);
+    List<Person> findByName(String name);
+    List<Person> findByAgeBetween(int minAge, int maxAge);
 }

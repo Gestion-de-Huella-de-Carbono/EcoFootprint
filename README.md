@@ -10,7 +10,7 @@ Puedes encontrar el diagrama de clases en el siguiente enlace: [Diagrama de Clas
 
 ## Diagrama de Despliegue
 
-Puedes encontrar el diagrama de despliegue en el siguiente enlace [Diagrama de Despliegue]()
+Puedes encontrar el diagrama de despliegue en el siguiente enlace [Diagrama de Despliegue](https://drive.google.com/file/d/1Afp8ygEvr803a82tuS9n98Mp2EsO4zAM/view?usp=sharing)
 
 ## Despliegue del Backend
 
@@ -26,21 +26,7 @@ Puedes encontrar el diagrama de despliegue en el siguiente enlace [Diagrama de D
     cd EcoFootprint-BackEnd
     ```
 
-3. Configurar la base de datos en `src/main/resources/application.properties`:
-    ```properties
-   spring.datasource.url=jdbc:h2:mem:Db-EcoFootprint
-   spring.datasource.driverClassName=org.h2.Driver
-   spring.datasource.username=sa
-   spring.datasource.password=
-   spring.h2.console.enabled=true
-   spring.h2.console.path=/h2-console
-   spring.h2.console.settings.web-allow-others=true
-   spring.jpa.database-platform=org.hibernate.dialect.H2Dialect
-   spring.jpa.hibernate.ddl-auto=update
-   spring.jpa.show-sql=true
-    ```
-
-4. Instalar las dependencias y compilar el proyecto:
+3. Instalar las dependencias y compilar el proyecto:
     ```sh
     mvn clean install
     ```
@@ -77,7 +63,6 @@ Para utilizar el frontend, abre el archivo `index.html` en tu navegador web:
 3. Asegúrate de que el backend esté en ejecución en [http://localhost:8080](http://localhost:8080/api/eco-footprint/persons) mientras utilizas el frontend.
 
 
-
 ## Tareas y Responsabilidades
 
 | Miembro del Equipo         | Funciones                                           |
@@ -85,10 +70,8 @@ Para utilizar el frontend, abre el archivo `index.html` en tu navegador web:
 | Juan Miguel Cadena         | **Mejoras en el Modelo de Excepciones y Modificaciones en los Modelos de Datos**<br>- Revisar y mejorar la estructura de las excepciones utilizadas en el proyecto.<br>- Asegurar que las excepciones sean adecuadamente lanzadas y manejadas según las buenas prácticas aprendidas.<br>- Revisar los modelos de datos actuales y añadir setters y getters según las necesidades del proyecto, asegurando coherencia y cumplimiento de los estándares definidos. |
 | Juan Manuel Velásquez      | **Implementación de Persistencia en Repositorios**<br>- Implementar la persistencia utilizando lo aprendido en la clase de persistencia.<br>- Utilizar Spring Data JPA en las interfaces ya creadas para gestionar las operaciones de persistencia de datos. |
 | Juan Esteban Obando        | **Definición de Métodos de Servicio**<br>- Definir los métodos a utilizar en las interfaces de servicio.<br>- Implementar dichos métodos asegurando que realicen las operaciones correspondientes utilizando los repositorios y modelos adecuados.<br>- Incluir lógica de negocio y manejo de excepciones apropiado. |
-| Daniela Ramirez            | **Definición de Métodos de Servicio**<br>- Colaborar en la definición de métodos en las interfaces de servicio.<br>- Implementar los métodos definidos, asegurando su correcta funcionalidad y manejo adecuado de excepciones y lógica de negocio. |
 | Carlos Andrés Zuluaga      | **Pruebas de Implementación del Servicio**<br>- Generar pruebas para los métodos del servicio implementado utilizando JUnit y Mockito, garantizando la calidad y funcionalidad del código. |
-| Yeferson Salcedo           | **Implementación de Métodos de API en el Controlador**<br>- Generar los métodos necesarios para el consumo del API.<br>- Asegurar que los métodos respondan adecuadamente a las solicitudes HTTP, siguiendo las mejores prácticas y estándares definidos. |
-
+| Yeferson Salcedo           | **Implementación de Métodos de API en el Controlador y Estructura de la Base de Datos**<br>- Desarrollar los métodos necesarios para el consumo del API.<br>- Asegurar que los métodos respondan adecuadamente a las solicitudes HTTP, siguiendo las mejores prácticas y estándares definidos.<br>- Diseñar y gestionar la estructura y el funcionamiento de la base de datos utilizando H2 y SQL, garantizando su integración eficiente con el backend de la aplicación. |
 ## Licenciamiento
 
 Este proyecto está licenciado bajo la Apache License 2.0. Para más detalles, consulta el archivo [LICENSE](LICENSE).

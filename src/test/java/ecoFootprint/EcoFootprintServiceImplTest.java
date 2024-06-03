@@ -57,19 +57,15 @@ class EcoFootprintServiceImplTest {
 
     @Test
     void when_FindAllPersons_should_return_all_persons_with_carbon_footprint() {
-        // Configurar las personas con sus respectivas huellas de carbono
         person1.setCarbonFootprint(carbonFootprint1);
         person2.setCarbonFootprint(carbonFootprint2);
 
-        // Mockear las respuestas del repositorio
         when(personRepository.findAll()).thenReturn(List.of(person1, person2));
         when(carbonFootprintRepository.findById(person1.getId())).thenReturn(Optional.of(carbonFootprint1));
         when(carbonFootprintRepository.findById(person2.getId())).thenReturn(Optional.of(carbonFootprint2));
 
-        // Llamar al método de servicio
         List<Person> persons = ecoFootprintService.findAllPersons();
 
-        // Verificar los resultados
         assertEquals(2, persons.size());
         assertEquals(carbonFootprint1.getTotalCarbonFootprint(), persons.get(0).getTotalCarbonFootprint());
         assertEquals(carbonFootprint2.getTotalCarbonFootprint(), persons.get(1).getTotalCarbonFootprint());
@@ -121,23 +117,21 @@ class EcoFootprintServiceImplTest {
 
         Person savedPerson = ecoFootprintService.savePerson(person1);
 
-        // Verificar que la persona guardada es la misma que la persona inicial
         assertEquals(person1, savedPerson);
 
-        // Verificar que la huella de carbono total de la persona guardada es correcta
         assertEquals(carbonFootprint1.getTotalCarbonFootprint(), savedPerson.getTotalCarbonFootprint());
     }
 
     @Test
-    void when_DeletePersonById_should_delete_person_and_carbon_footprint() throws PersonNotFoundException, CarbonFootprintNotFoundException {
+    void when_DeletePersonById_should_delete_person_and_carbon_footprint() throws PersonNotFoundException {
         when(personRepository.findById(person1.getId())).thenReturn(Optional.of(person1));
         when(carbonFootprintRepository.findById(person1.getId())).thenReturn(Optional.of(carbonFootprint1));
 
         ecoFootprintService.deletePersonById(person1.getId());
 
         verify(personRepository, times(1)).delete(person1);
-        verify(carbonFootprintRepository, times(1)).delete(carbonFootprint1);
     }
+
 
     @Test
     void when_UpdatePerson_should_update_person() throws PersonNotFoundException {

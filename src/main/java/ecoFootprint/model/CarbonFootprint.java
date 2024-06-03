@@ -19,7 +19,6 @@ public class CarbonFootprint {
     @JoinColumn(name = "person_id")
     private Person person;
 
-    // Constructor, getters y setters
     public CarbonFootprint(Double transport, Double energy, Double food, Double other, Person person) {
         this.transport = transport;
         this.energy = energy;

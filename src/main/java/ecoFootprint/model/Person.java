@@ -21,7 +21,6 @@ public class Person {
 	@OneToOne(mappedBy = "person", cascade = CascadeType.ALL)
 	private CarbonFootprint carbonFootprint;
 
-	// Constructor, getters y setters
 	public Person(String name, String lastName, int age, String city, double carbonFootprint) {
 		this.name = name;
 		this.lastName = lastName;
@@ -29,7 +28,6 @@ public class Person {
 		this.city = city;
 		this.totalCarbonFootprint = carbonFootprint;
 	}
-
 
 	public Person() {
 

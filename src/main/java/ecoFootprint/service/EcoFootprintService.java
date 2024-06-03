@@ -9,7 +9,6 @@ import ecoFootprint.model.Person;
 import ecoFootprint.model.CarbonFootprint;
 
 public interface EcoFootprintService {
-
 	List<Person> findAllPersons();
 	List<Person> showSameAgePeople(int age);
 	List<Person> findByAgeBetween(int minAge, int maxAge);

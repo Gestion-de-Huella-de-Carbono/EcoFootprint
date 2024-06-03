@@ -1,79 +1,98 @@
 package ecoFootprint.model;
 
+import jakarta.persistence.*;
+
 import java.text.MessageFormat;
 
+
+@Entity
 public class Person {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
+
 	private String name;
 	private String lastName;
 	private int age;
 	private String city;
 	private double totalCarbonFootprint;
-	private long id;
-	
 
-	public Person(String name,String lastName, int age, long id, String city, double totalCarbonFootprint) {
+	@OneToOne(mappedBy = "person", cascade = CascadeType.ALL)
+	private CarbonFootprint carbonFootprint;
+
+	// Constructor, getters y setters
+	public Person(String name, String lastName, int age, String city, double carbonFootprint) {
 		this.name = name;
 		this.lastName = lastName;
-		this.id = id;
 		this.age = age;
 		this.city = city;
-		this.totalCarbonFootprint = totalCarbonFootprint;
-	}
-
-	public int getAge() {
-		return age;
+		this.totalCarbonFootprint = carbonFootprint;
 	}
 
 
-	public void setTotalCarbonFootprint(double totalCarbonFootprint) {
-        this.totalCarbonFootprint = totalCarbonFootprint;
-    }
+	public Person() {
 
-
-	public String toString() {// Método toString para obtener una representación en forma de cadena de la instancia de la clase Person
-
-		return MessageFormat.format("{0}, {1}, {2}, {3}, {4}, {5}", name, lastName, id, age,city, totalCarbonFootprint);
-		// Devuelve una cadena que contiene el nombre, apellido, edad, ciudad y huella de carbono total de la persona
 	}
 
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
 
 	public String getName() {
 		return name;
-	}
-
-	public String getLastName() {
-		return lastName;
-	}
-
-	public String getCity() {
-		return city;
-	}
-
-	public double getTotalCarbonFootprint() {
-		return totalCarbonFootprint;
-	}
-
-	public long getId() {
-		return id;
 	}
 
 	public void setName(String name) {
 		this.name = name;
 	}
 
+	public String getLastName() {
+		return lastName;
+	}
+
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
+	}
+
+	public int getAge() {
+		return age;
 	}
 
 	public void setAge(int age) {
 		this.age = age;
 	}
 
+	public String getCity() {
+		return city;
+	}
+
 	public void setCity(String city) {
 		this.city = city;
 	}
 
-	public void setId(long id) {
-		this.id = id;
+	public double getTotalCarbonFootprint() {
+		return totalCarbonFootprint;
+	}
+
+	public void setTotalCarbonFootprint(double carbonFootprint) {
+		this.totalCarbonFootprint = carbonFootprint;
+	}
+
+	public CarbonFootprint getCarbonFootprint() {
+		return carbonFootprint;
+	}
+
+	public void setCarbonFootprint(CarbonFootprint carbonFootprint) {
+		this.carbonFootprint = carbonFootprint;
+	}
+
+	@Override
+	public String toString() {
+		return MessageFormat.format("{0},{1},{2},{3},{4},{5}", id, name, lastName, age, city, carbonFootprint);
 	}
 }

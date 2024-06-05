@@ -23,14 +23,14 @@ public class EcoFootprintController {
     private EcoFootprintService ecoFootprintService;
     private static final Logger logger = LoggerFactory.getLogger(EcoFootprintController.class);
 
-    @GetMapping("/persons")//ya
+    @GetMapping("/persons")
     public ResponseEntity<List<Person>> findAllPersons() {
         logger.info("Finding all persons");
         List<Person> persons = ecoFootprintService.findAllPersons();
         return ResponseEntity.ok().body(persons);
     }
 
-    @GetMapping("/persons/age")//ya
+    @GetMapping("/persons/age")
     public ResponseEntity<List<Person>> showSameAgePeople(@RequestParam("age") int age) {
         logger.info("Finding persons with age: {}", age);
         List<Person> persons = ecoFootprintService.showSameAgePeople(age);
@@ -43,11 +43,15 @@ public class EcoFootprintController {
         return ResponseEntity.ok().body(person);
     }
 
-    @GetMapping("/carbon-footprints/{personId}")
-    public ResponseEntity<CarbonFootprint> getCarbonFootprintByPersonId(@PathVariable Long personId) throws CarbonFootprintNotFoundException {
-        logger.info("Getting carbon footprint for person with id: {}", personId);
-        CarbonFootprint carbonFootprint = ecoFootprintService.getCarbonFootprintByPersonId(personId);
-        return ResponseEntity.ok().body(carbonFootprint);
+    @GetMapping("/persons/find-id")
+    public ResponseEntity<Long> findPersonIdByNameAndLastNameAndAgeAndCity(
+            @RequestParam("name") String name,
+            @RequestParam("lastName") String lastName,
+            @RequestParam("age") int age,
+            @RequestParam("city") String city) throws PersonNotFoundException {
+        logger.info("Finding person ID with name: {}, lastName: {}, age: {}, city: {}", name, lastName, age, city);
+        Long personId = ecoFootprintService.findPersonIdByNameAndLastNameAndAgeAndCity(name, lastName, age, city);
+        return ResponseEntity.ok().body(personId);
     }
 
     @GetMapping("/persons/age-range")
@@ -58,28 +62,28 @@ public class EcoFootprintController {
         return ResponseEntity.ok().body(persons);
     }
 
-    @GetMapping("/persons/city")//ya
+    @GetMapping("/persons/city")
     public ResponseEntity<List<Person>> findByCity(@RequestParam("city") String city) {
         logger.info("Finding persons by city: {}", city);
         List<Person> persons = ecoFootprintService.findByCity(city);
         return ResponseEntity.ok().body(persons);
     }
 
-    @GetMapping("/persons/name")//ya
+    @GetMapping("/persons/name")
     public ResponseEntity<List<Person>> findByName(@RequestParam("name") String name) {
         logger.info("Finding persons by name: {}", name);
         List<Person> persons = ecoFootprintService.findByName(name);
         return ResponseEntity.ok().body(persons);
     }
 
-    @PostMapping("/persons")//ya
-    public ResponseEntity<Person> savePerson(@RequestBody @Valid Person person) throws PersonNotFoundException {
+    @PostMapping("/persons")
+    public ResponseEntity<Person> savePerson(@RequestBody @Valid Person person) {
         logger.info("Saving a new person: {}", person);
         Person savedPerson = ecoFootprintService.savePerson(person);
         return ResponseEntity.status(HttpStatus.CREATED).body(savedPerson);
     }
 
-    @PostMapping("/carbon-footprints")//ya
+    @PostMapping("/carbon-footprints")
     public ResponseEntity<CarbonFootprint> saveCarbonFootprint(@RequestBody @Valid CarbonFootprint carbonFootprint) {
         logger.info("Saving a new carbon footprint: {}", carbonFootprint);
         CarbonFootprint savedCarbonFootprint = ecoFootprintService.saveCarbonFootprint(carbonFootprint);
@@ -104,13 +108,6 @@ public class EcoFootprintController {
     public ResponseEntity<Void> deletePersonById(@PathVariable Long id) throws PersonNotFoundException{
         logger.info("Deleting person with id: {}", id);
         ecoFootprintService.deletePersonById(id);
-        return ResponseEntity.noContent().build();
-    }
-
-    @DeleteMapping("/carbon-footprints/{personId}")
-    public ResponseEntity<Void> deleteCarbonFootprintByPersonId(@PathVariable Long personId) throws CarbonFootprintNotFoundException {
-        logger.info("Deleting carbon footprint for person with id: {}", personId);
-        ecoFootprintService.deleteCarbonFootprintByPersonId(personId);
         return ResponseEntity.noContent().build();
     }
 }

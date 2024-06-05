@@ -62,17 +62,15 @@ public class EcoFootprintServiceImpl implements EcoFootprintService {
 		return personRepository.findByName(name);
 	}
 
-	@Override
 	public Person savePerson(Person person) {
 		Person savedPerson = personRepository.save(person);
-		CarbonFootprint carbonFootprint = new CarbonFootprint(3.0, 4.0, 2.0, 1.0, savedPerson); // Asegúrate de usar los valores correctos
+		// Guardar una nueva huella de carbono
+		CarbonFootprint carbonFootprint = new CarbonFootprint(0.0, 0.0, 0.0, 0.0, savedPerson);
 		carbonFootprintRepository.save(carbonFootprint);
-		savedPerson.setTotalCarbonFootprint(carbonFootprint.getTotalCarbonFootprint());
+		savedPerson.setCarbonFootprint(carbonFootprint); // Asignar la huella de carbono a la persona
 		return savedPerson;
 	}
 
-
-	@Override
 	public CarbonFootprint saveCarbonFootprint(CarbonFootprint carbonFootprint) {
 		return carbonFootprintRepository.save(carbonFootprint);
 	}
@@ -88,16 +86,14 @@ public class EcoFootprintServiceImpl implements EcoFootprintService {
 		}
 	}
 
-	public void deleteCarbonFootprintByPersonId(Long personId) throws CarbonFootprintNotFoundException {
-		CarbonFootprint carbonFootprint = carbonFootprintRepository.findById(personId)
-				.orElseThrow(() -> new CarbonFootprintNotFoundException(personId));
-		carbonFootprintRepository.delete(carbonFootprint);
-	}
-
 	@Override
-	public CarbonFootprint getCarbonFootprintByPersonId(Long personId) throws CarbonFootprintNotFoundException {
-		return carbonFootprintRepository.findById(personId)
-				.orElseThrow(() -> new CarbonFootprintNotFoundException(personId));
+	public Long findPersonIdByNameAndLastNameAndAgeAndCity(String name, String lastName, int age, String city) throws PersonNotFoundException {
+		Optional<Person> optionalPerson = personRepository.findByNameAndLastNameAndAgeAndCity(name, lastName, age, city);
+		if (optionalPerson.isPresent()) {
+			return optionalPerson.get().getId();
+		} else {
+			throw new PersonNotFoundException();
+		}
 	}
 
 	@Override

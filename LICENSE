@@ -1,5 +1,3 @@
-Copyright 2024 Yeferson Alexis Salcedo Preciado
-
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
 You may obtain a copy of the License at
@@ -11,3 +9,26 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
+
+Contributions by team members:
+
+- Juan Miguel Cadena:
+  - Mejoras en el Modelo de Excepciones.
+  - Modificaciones en los Modelos de Datos.
+  
+- Juan Manuel Velásquez:
+  - Implementación de Persistencia en Repositorios.
+  - Uso de Spring Data JPA para operaciones de persistencia.
+
+- Juan Esteban Obando:
+  - Definición de Métodos de Servicio.
+  - Implementación de métodos en las interfaces de servicio.
+  - Inclusión de lógica de negocio y manejo de excepciones.
+
+- Carlos Andrés Zuluaga:
+  - Pruebas de Implementación del Servicio.
+  - Generación de pruebas con JUnit y Mockito para validar el código.
+
+- Yeferson Salcedo:
+  - Implementación de Métodos de API en el Controlador.
+  - Estructura de la Base de Datos utilizando H2 y SQL.

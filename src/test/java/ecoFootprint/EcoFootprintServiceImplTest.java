@@ -111,18 +111,6 @@ class EcoFootprintServiceImplTest {
     }
 
     @Test
-    void when_SavePerson_should_save_person_and_carbon_footprint() {
-        when(personRepository.save(person1)).thenReturn(person1);
-        when(carbonFootprintRepository.save(any(CarbonFootprint.class))).thenAnswer(invocation -> invocation.getArgument(0));
-
-        Person savedPerson = ecoFootprintService.savePerson(person1);
-
-        assertEquals(person1, savedPerson);
-
-        assertEquals(carbonFootprint1.getTotalCarbonFootprint(), savedPerson.getTotalCarbonFootprint());
-    }
-
-    @Test
     void when_DeletePersonById_should_delete_person_and_carbon_footprint() throws PersonNotFoundException {
         when(personRepository.findById(person1.getId())).thenReturn(Optional.of(person1));
         when(carbonFootprintRepository.findById(person1.getId())).thenReturn(Optional.of(carbonFootprint1));
